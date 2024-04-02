@@ -58,3 +58,4 @@ C:\Users\ADMIN\Desktop\project\deoaihoi\deoaihoi\WindowsFormsApp1\WindowsFormsAp
 C:\Users\ADMIN\Desktop\project\deoaihoi\deoaihoi\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\ADMIN\Desktop\project\deoaihoi\deoaihoi\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\ADMIN\Desktop\project\deoaihoi\deoaihoi\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\ADMIN\Desktop\project\deoaihoi\deoaihoi\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fRegister.resources

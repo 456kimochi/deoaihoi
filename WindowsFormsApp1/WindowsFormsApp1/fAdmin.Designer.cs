@@ -95,6 +95,7 @@
             this.dgvTable = new System.Windows.Forms.DataGridView();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.btnShow = new System.Windows.Forms.Button();
             this.btnResetPass = new System.Windows.Forms.Button();
             this.panel24 = new System.Windows.Forms.Panel();
             this.comLevelAccount = new System.Windows.Forms.ComboBox();
@@ -112,7 +113,6 @@
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
-            this.btnShow = new System.Windows.Forms.Button();
             this.tbAdmin.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -791,6 +791,16 @@
             this.panel19.Size = new System.Drawing.Size(362, 296);
             this.panel19.TabIndex = 12;
             // 
+            // btnShow
+            // 
+            this.btnShow.Location = new System.Drawing.Point(133, 189);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(90, 77);
+            this.btnShow.TabIndex = 6;
+            this.btnShow.Text = "Show";
+            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            // 
             // btnResetPass
             // 
             this.btnResetPass.Location = new System.Drawing.Point(264, 189);
@@ -944,16 +954,6 @@
             this.dgvAccount.RowTemplate.Height = 24;
             this.dgvAccount.Size = new System.Drawing.Size(385, 295);
             this.dgvAccount.TabIndex = 2;
-            // 
-            // btnShow
-            // 
-            this.btnShow.Location = new System.Drawing.Point(103, 216);
-            this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(75, 23);
-            this.btnShow.TabIndex = 6;
-            this.btnShow.Text = "Show";
-            this.btnShow.UseVisualStyleBackColor = true;
-            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // fAdmin
             // 

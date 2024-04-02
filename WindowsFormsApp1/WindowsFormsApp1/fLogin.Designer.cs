@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -37,8 +38,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.insUserName = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.Label();
-            this.btnSendata = new System.Windows.Forms.Button();
-            this.btnReceive = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -46,8 +45,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnReceive);
-            this.panel1.Controls.Add(this.btnSendata);
+            this.panel1.Controls.Add(this.btnRegister);
             this.panel1.Controls.Add(this.btnQuit);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.panel3);
@@ -56,6 +54,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(577, 256);
             this.panel1.TabIndex = 1;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(209, 206);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(81, 27);
+            this.btnRegister.TabIndex = 5;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegis_Click);
             // 
             // btnQuit
             // 
@@ -131,26 +139,6 @@
             this.txtUserName.TabIndex = 0;
             this.txtUserName.Text = "User Name:";
             // 
-            // btnSendata
-            // 
-            this.btnSendata.Location = new System.Drawing.Point(151, 197);
-            this.btnSendata.Name = "btnSendata";
-            this.btnSendata.Size = new System.Drawing.Size(90, 45);
-            this.btnSendata.TabIndex = 4;
-            this.btnSendata.Text = "Send Data";
-            this.btnSendata.UseVisualStyleBackColor = true;
-            this.btnSendata.Click += new System.EventHandler(this.btnSendata_Click);
-            // 
-            // btnReceive
-            // 
-            this.btnReceive.Location = new System.Drawing.Point(28, 197);
-            this.btnReceive.Name = "btnReceive";
-            this.btnReceive.Size = new System.Drawing.Size(90, 45);
-            this.btnReceive.TabIndex = 5;
-            this.btnReceive.Text = "Receive";
-            this.btnReceive.UseVisualStyleBackColor = true;
-            this.btnReceive.Click += new System.EventHandler(this.btnReceive_Click);
-            // 
             // fLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -183,8 +171,7 @@
         private System.Windows.Forms.TextBox insUserName;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnSendata;
-        private System.Windows.Forms.Button btnReceive;
+        private System.Windows.Forms.Button btnRegister;
     }
 }
 

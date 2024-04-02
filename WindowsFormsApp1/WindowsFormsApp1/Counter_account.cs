@@ -8,6 +8,6 @@ namespace WindowsFormsApp1
 {
     internal class Counter_account
     {
-        public string cnt { get; set; }
+        public int cnt { get; set; }
     }
 }

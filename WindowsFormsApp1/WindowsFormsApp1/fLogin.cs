@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FireSharp;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -39,21 +40,32 @@ namespace WindowsFormsApp1
         }
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            FirebaseResponse response = await client.GetTaskAsync("Account/" + insUserName.Text);
-
-            Data obj = response.ResultAs<Data>();
-
-            if (insUserName.Text == obj.userName && insPassword.Text == obj.password)
+            FirebaseResponse count = await client.GetTaskAsync("Counter/node");
+            Counter_account cnt = count.ResultAs<Counter_account>();
+            for (int i = 0; i < cnt.cnt; i++)
             {
-                fTableManager f = new fTableManager();
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
+                FirebaseResponse userGet = await client.GetTaskAsync("UserName/" + i);
+                Key key = userGet.ResultAs<Key>();
+                if (insUserName.Text == key.userName)
+                {
+                    FirebaseResponse response = await client.GetTaskAsync("Account/" + insUserName.Text);
+                    Data obj = response.ResultAs<Data>();
+
+                    if (insPassword.Text == obj.password)
+                    {
+                        fTableManager f = new fTableManager();
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong password inserted");
+                    }
+                    return;
+                }
             }
-            else
-            {
-                MessageBox.Show("Wrong account inserted");
-            }
+            MessageBox.Show("Account does not exist");
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
@@ -70,32 +82,12 @@ namespace WindowsFormsApp1
             }
         }
 
-        private async void btnSendata_Click(object sender, EventArgs e)
+        private void btnRegis_Click(object sender, EventArgs e)
         {
-            FirebaseResponse resp = await client.GetTaskAsync("Account");
-            Counter_account get = resp.ResultAs<Counter_account>();
-            MessageBox.Show(get.cnt);
-
-            /*var data = new Data
-            {
-                userName = insUserName.Text,
-                password = insPassword.Text,
-            };
-
-            SetResponse response = await client.SetTaskAsync("Account/"+insUserName.Text, data);
-            Data result = response.ResultAs<Data>();
-
-            MessageBox.Show("Data Inserted" + result.userName);*/
-        }
-
-        private async void btnReceive_Click(object sender, EventArgs e)
-        {
-            FirebaseResponse response = await client.GetTaskAsync("Account/"+insUserName.Text);
-
-            Data obj = response.ResultAs<Data>();
-
-            insUserName.Text = obj.userName;
-            insPassword.Text = obj.password;
+            fRegister f = new fRegister();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

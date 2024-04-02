@@ -13,6 +13,8 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using System.Collections;
+using FireSharp;
+
 
 namespace WindowsFormsApp1
 {
@@ -45,29 +47,30 @@ namespace WindowsFormsApp1
 
         private async void btnShow_Click(object sender, EventArgs e)
         {
-            /*DataTable dt = new DataTable();
+            DataTable dt = new DataTable();
 
+            dt.Columns.Add("displayName", typeof(string));
             dt.Columns.Add("userName", typeof(string));
             dt.Columns.Add("password", typeof(string));
 
-            FirebaseResponse response = await client.GetTaskAsync("Account/456kimochi");
+            FirebaseResponse cntGet = await client.GetTaskAsync("Counter/node");
+            Counter_account cnt = cntGet.ResultAs<Counter_account>();
 
-            Data obj = response.ResultAs<Data>();
+            for (int i = 0; i<cnt.cnt; i++)
+            {
+                FirebaseResponse userNameGet = await client.GetTaskAsync("UserName/" +i);
+                Key key = userNameGet.ResultAs<Key>();
 
-            DataRow row = dt.NewRow();
-            row["userName"] = obj.userName;
-            row["password"] = obj.password;
-            dt.Rows.Add(row);
+                FirebaseResponse userGet = await client.GetTaskAsync("Account/" + key.userName);
+                Data data = userGet.ResultAs<Data>();
 
-            FirebaseResponse response2 = await client.GetTaskAsync("Account/huyducbhn");
-
-            Data obj2 = response2.ResultAs<Data>();
-
-            DataRow row2 = dt.NewRow();
-            row2["userName"] = obj2.userName;
-            row2["password"] = obj2.password;
-            dt.Rows.Add(row2);
-            dgvAccount.DataSource = dt;*/
+                DataRow row = dt.NewRow();
+                row["displayName"] += data.displayName;
+                row["userName"] += data.userName;
+                row["password"] += data.password;
+                dt.Rows.Add(row);
+            }
+            dgvAccount.DataSource = dt;
         }
 
         private void fAdmin_Load(object sender, EventArgs e)

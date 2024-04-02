@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
 
         private async void btnShow_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
+            /*DataTable dt = new DataTable();
 
             dt.Columns.Add("userName", typeof(string));
             dt.Columns.Add("password", typeof(string));
@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
             row2["userName"] = obj2.userName;
             row2["password"] = obj2.password;
             dt.Rows.Add(row2);
-            dgvAccount.DataSource = dt;
+            dgvAccount.DataSource = dt;*/
         }
 
         private void fAdmin_Load(object sender, EventArgs e)

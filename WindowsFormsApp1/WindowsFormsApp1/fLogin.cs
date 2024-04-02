@@ -72,7 +72,11 @@ namespace WindowsFormsApp1
 
         private async void btnSendata_Click(object sender, EventArgs e)
         {
-            var data = new Data
+            FirebaseResponse resp = await client.GetTaskAsync("Account");
+            Counter_account get = resp.ResultAs<Counter_account>();
+            MessageBox.Show(get.cnt);
+
+            /*var data = new Data
             {
                 userName = insUserName.Text,
                 password = insPassword.Text,
@@ -81,7 +85,7 @@ namespace WindowsFormsApp1
             SetResponse response = await client.SetTaskAsync("Account/"+insUserName.Text, data);
             Data result = response.ResultAs<Data>();
 
-            MessageBox.Show("Data Inserted" + result.userName);
+            MessageBox.Show("Data Inserted" + result.userName);*/
         }
 
         private async void btnReceive_Click(object sender, EventArgs e)
